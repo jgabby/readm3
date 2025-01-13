@@ -19,7 +19,7 @@ The m3.seq and m3hw.seq files were structured such that each line represents a c
 The r2.seq file is structured differently, with more of a "polyline" style, combining strings of segments and then again providing a pair of conductivities for either side of the combined polyline.
 
 To be more consistent, The conductivity JSON objects use the same format for both m3 and r2 data.  The data is structured into an array of segments.  Each segment is an array with: 
-'''
+```
 [
     segment id,
     lat1,
@@ -31,7 +31,7 @@ To be more consistent, The conductivity JSON objects use the same format for bot
     bearing1 (point 1 to point 2),
     bearing2 (point 2 to point 1)
 ]
-'''
+```
 The bearings between segment endpoints were not included in the original sequnce files but have proven useful to spare the constant recalculation of their values.
 # Usage
 
