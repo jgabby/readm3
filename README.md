@@ -26,8 +26,8 @@ To be more consistent, The conductivity JSON objects use the same format for bot
     lon1,
     lat2,
     lon2,
-    sigma (n/e),
-    sigma (s/w),
+    sigma1 (n/e),
+    sigma2 (s/w),
     bearing1 (point 1 to point 2),
     bearing2 (point 2 to point 1)
 ]
