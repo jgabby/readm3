@@ -1,3 +1,5 @@
+#Introduction
+
 Figure R3 of 47 CFR 73.190 (https://www.ecfr.gov/current/title-47/chapter-I/subchapter-C/part-73/subpart-A/section-73.190) contains a map of estimated ground conductivity in the United States.
 
 This data is used to predict the propagation of AM signals across the United States. A higher ground conductivity indicates better AM propagation characteristics.  The map shows that the ground conductivity in the U.S. ranges between 0.5 and 30 millimhos (or millisiemens) per meter.  The conductivity of seawater is 5,000 millimhos per meter, resulting in the best propagation of AM signals.
@@ -7,9 +9,12 @@ https://www.fcc.gov/media/radio/m3-ground-conductivity-map
 
 These digital sequence files are not well documented.
 
+#Purpose
 This project has taken those conductivity sequence files and restructured them as json objects.  It has also corrected a number of mistakes and inconsistencies within the data, including reversed conductivity values for certain segments, disjointed segment endpoints, and some typographical errors.
 
 This project also provides a reference method of reading the conductivity segments to construct a conductivity profile that can be used to calculate an AM groundwave service or interference contour.
+
+#Usage
 
 A simple API server is provided with the endpoints /m3 and /r2
 required parameters are:
@@ -18,15 +23,19 @@ lon: test point longitude in degrees West (positive or negative values are accep
 dist: maximum distance in kilometers (typically 1300 km)
 interval: degrees between test paths (typically 1, 5, or 10)
 
-Installation:
+
+#Installation
 Clone this git
 cd into the destination folder
 run: 
+```
 npm install
 node server.js
+```
 
 The server will begin running on localhost port 3000.
 
 Examples:
 http://localhost:3000/m3?lat=30&lon=90&dist=1300&interval=1
+\
 http://localhost:3000/r2?lat=30&lon=90&dist=1300&interval=1
