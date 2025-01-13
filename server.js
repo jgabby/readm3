@@ -9,10 +9,10 @@ app.get('/m3', (req, res) => {
     let conductivities;
     try {
         console.log(req.query);
-        let lat = req.query.lat;
-        let lon = req.query.lon;
-        let interval = req.query.interval;
-        let maxdist = req.query.dist;
+        let lat = Number(req.query.lat);
+        let lon = Number(req.query.lon);
+        let interval = Number(req.query.interval);
+        let maxdist = Number(req.query.dist);
 
         if (validate(maxdist, lat, lon, interval)) {
             conductivities = readm3.getAllPaths([lat,lon], interval, maxdist, 'm3');
@@ -22,6 +22,7 @@ app.get('/m3', (req, res) => {
 
         
     } catch(e) {
+        console.error(e);
         conductivities = {result: "error", error: e};
     }
 
@@ -35,19 +36,20 @@ app.get('/r2', (req, res) => {
     let conductivities;
     try {
         console.log(req.query);
-        let lat = req.query.lat;
-        let lon = req.query.lon;
-        let interval = req.query.interval;
-        let maxdist = req.query.dist;
+        let lat = Number(req.query.lat);
+        let lon = Number(req.query.lon);
+        let interval = Number(req.query.interval);
+        let maxdist = Number(req.query.dist);
 
         if (validate(maxdist, lat, lon, interval)) {
-            conductivities = readm3.getAllPaths([lat,lon], maxdist, 1300, 'r2');
+            conductivities = readm3.getAllPaths([lat,lon], interval, maxdist, 'r2');
         }else{
             conductivities = {result: "error", error: "validation"};
         }
 
         
     } catch(e) {
+        console.error(e);
         conductivities = {result: "error", error: e};
     }
 

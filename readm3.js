@@ -35,6 +35,7 @@ function getAllPaths(start_coord, interval, max_distance, conductivity_set='m3')
     let conductivity = m3data;
     if (conductivity_set == 'r2') {
         conductivity = r2data;
+        console.log("Using r2 data");
     }
 
 	conductivity.data.forEach(line => { //for each line in m3, find the bearings to the endpoints
