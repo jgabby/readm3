@@ -10,3 +10,23 @@ These digital sequence files are not well documented.
 This project has taken those conductivity sequence files and restructured them as json objects.  It has also corrected a number of mistakes and inconsistencies within the data, including reversed conductivity values for certain segments, disjointed segment endpoints, and some typographical errors.
 
 This project also provides a reference method of reading the conductivity segments to construct a conductivity profile that can be used to calculate an AM groundwave service or interference contour.
+
+A simple API server is provided with the endpoints /m3 and /r2
+required parameters are:
+lat: test point latitude in degrees North
+lon: test point longitude in degrees West (positive or negative values are accepted, but all are subsequently adjusted into the Western hemisphere)
+dist: maximum distance in kilometers (typically 1300 km)
+interval: degrees between test paths (typically 1, 5, or 10)
+
+Installation:
+Clone this git
+cd into the destination folder
+run: 
+npm install
+node server.js
+
+The server will begin running on localhost port 3000.
+
+Examples:
+http://localhost:3000/m3?lat=30&lon=90&dist=1300&interval=1
+http://localhost:3000/r2?lat=30&lon=90&dist=1300&interval=1
