@@ -58,3 +58,6 @@ The server will begin running on localhost port 3000.
 http://localhost:3000/m3?lat=30&lon=90&dist=1300&interval=10
 \
 http://localhost:3000/r2?lat=30&lon=90&dist=1300&interval=10
+
+# Reflections
+I will note that, instinctively, due to the geographical nature of the data, I trended toward a GIS base solution.  I constructed polygons, and spent considerable time making sure they had complete but non-overlapping coverage.  Utimately, the result "worked" but slowly, and gave different results than the historical programs.  I finally realized that, in the scale of modern computing, the data tables here are quite small and can be held comepletely in memory and scanned quickly.

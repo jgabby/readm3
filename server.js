@@ -2,7 +2,6 @@ const express = require('express');
 const app= express();
 const readm3 = require('./readm3.js');
 
-
 app.get('/m3', (req, res) => {
     // console.log(req);
     res.writeHead(200, {"Content-Type": "application/json"});
