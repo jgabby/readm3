@@ -55,6 +55,6 @@ node server.js
 The server will begin running on localhost port 3000.
 
 # Examples
-http://localhost:3000/m3?lat=30&lon=90&dist=1300&interval=1
+http://localhost:3000/m3?lat=30&lon=90&dist=1300&interval=10
 \
-http://localhost:3000/r2?lat=30&lon=90&dist=1300&interval=1
+http://localhost:3000/r2?lat=30&lon=90&dist=1300&interval=10
