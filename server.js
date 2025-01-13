@@ -15,7 +15,7 @@ app.get('/m3', (req, res) => {
         let maxdist = req.query.dist;
 
         if (validate(maxdist, lat, lon, interval)) {
-            conductivities = readm3.getAllPaths([35,90], 1, 1300, 'm3');
+            conductivities = readm3.getAllPaths([lat,lon], interval, maxdist, 'm3');
         }else{
             conductivities = {result: "error", error: "validation"};
         }
@@ -41,7 +41,7 @@ app.get('/r2', (req, res) => {
         let maxdist = req.query.dist;
 
         if (validate(maxdist, lat, lon, interval)) {
-            conductivities = readm3.getAllPaths([35,90], 1, 1300, 'r2');
+            conductivities = readm3.getAllPaths([lat,lon], maxdist, 1300, 'r2');
         }else{
             conductivities = {result: "error", error: "validation"};
         }
